@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ 'Cadastro' if cadastro else 'Login' }}</h2>
+
+<form method="POST">
+    <label>Usuário:</label>
+    <input type="text" name="username" required><br>
+
+    <label>Senha:</label>
+    <input type="password" name="password" required><br>
+
+    <button type="submit">{{ 'Cadastrar' if cadastro else 'Entrar' }}</button>
+</form>
+
+{% if cadastro %}
+    <p>Já tem uma conta? <a href="{{ url_for('login') }}">Login</a></p>
+{% else %}
+    <p>Não tem uma conta? <a href="{{ url_for('register') }}">Cadastrar</a></p>
+{% endif %}
+{% endblock %}

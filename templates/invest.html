@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Investir em Poupança</h2>
+<form method="post">
+    <input type="number" name="valor" step="0.01" required placeholder="Valor do investimento">
+    <input type="text" name="descricao" placeholder="Descrição (opcional)">
+    <input type="datetime-local" name="data" required>
+    <button type="submit">Investir</button>
+</form>
+{% endblock %}

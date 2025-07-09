@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<p><strong>Saldo Atual:</strong> R$ {{ saldo }}</p>
+<p><strong>Total de Receitas:</strong> R$ {{ receitas }}</p>
+<p><strong>Total de Despesas:</strong> R$ {{ despesas }}</p>
+
+<a href="{{ url_for('add_transaction') }}">
+    <button>Nova Transação</button>
+</a>
+
+<a href="{{ url_for('transactions') }}">
+    <button>Ver Todas as Transações</button>
+</a>
+{% endblock %}

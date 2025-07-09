@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Minhas Transações</h2>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Data</th>
+        <th>Tipo</th>
+        <th>Descrição</th>
+        <th>Valor (R$)</th>
+    </tr>
+    {% for t in transacoes %}
+    <tr>
+        <td>{{ t.date }}</td>
+        <td>{{ t.type }}</td>
+        <td>{{ t.description }}</td>
+        <td>{{ t.amount }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="botoes">
+    <a href="{{ url_for('add_transaction') }}">Adicionar Transação</a>
+    <a href="{{ url_for('dashboard') }}">Voltar ao Dashboard</a>
+</div>
+{% endblock %}
